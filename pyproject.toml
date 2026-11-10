@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retina-lens-ai"
+version = "0.1.0"
+description = "Multi-task deep learning for diabetic retinopathy: grading, lesion segmentation, quality, uncertainty, explainability."
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.1", "torchvision>=0.16", "timm>=0.9.12", "albumentations>=1.4",
+  "opencv-python-headless>=4.8", "numpy>=1.24", "pandas>=2.0", "scikit-learn>=1.3",
+  "scipy>=1.10", "pyyaml>=6.0", "pillow>=10.0", "tqdm>=4.66",
+]
+[project.optional-dependencies]
+app = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "python-multipart", "pydantic>=2.5",
+       "streamlit>=1.32", "plotly>=5.18", "reportlab>=4.0", "requests"]
+track = ["mlflow>=2.9"]
+dev = ["pytest>=8", "ruff>=0.3", "httpx"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.ruff]
+line-length = 110
+[tool.pytest.ini_options]
+testpaths = ["tests"]
