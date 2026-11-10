@@ -1,0 +1,13 @@
+# Copy to configs/datasets.yaml and set YOUR local paths (never commit them).
+# Use forward slashes on Windows, e.g. D:/datasets/IDRiD
+idrid:
+  root: /path/to/IDRiD
+  missing_mask_means_negative: false   # keep false unless you verified the annotation protocol
+aptos:
+  root: /path/to/aptos2019
+ddr:
+  root: /path/to/DDR-dataset
+  missing_mask_means_negative: false
+fgadr:
+  root: /path/to/FGADR
+  missing_mask_means_negative: false
